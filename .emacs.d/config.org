@@ -1,0 +1,87 @@
+* Display setup
+** Interface
+#+BEGIN_SRC emacs-lisp
+(use-package dashboard
+  :ensure t
+  :config
+  (dashboard-setup-startup-hook))
+
+;; Set the title
+(setq dashboard-banner-logo-title "Welcome to My Emacs Dashboard")
+;; Set the banner
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-center-content t)
+#+END_SRC
+** Text
+#+BEGIN_SRC emacs-lisp
+  ;; (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+#+END_SRC
+** Minor modes
+#+BEGIN_SRC emacs-lisp
+  (column-number-mode 1)
+  (global-linum-mode t)
+  (setq linum-format "%4d ")
+  (global-hl-line-mode t)
+  (electric-pair-mode)
+  (menu-bar-mode -1)
+  (tool-bar-mode -1)
+  (show-paren-mode 1)
+  (scroll-bar-mode -1)
+#+END_SRC
+* Configuration
+** Helpers
+#+BEGIN_SRC emacs-lisp
+(require 'ido)
+(ido-mode t)
+(ido-everywhere 1)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(use-package which-key
+  :ensure t
+  :config
+  (which-key-mode))
+#+END_SRC
+* External Packages
+** Themes
+#+BEGIN_SRC emacs-lisp
+  ;; (require 'dracula-theme)
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(use-package spaceline
+  :ensure t
+  :config
+  (require 'spaceline-config)
+  (setq powerline-default-separator (quote arrow))
+  (spaceline-emacs-theme))
+#+END_SRC
+** Python
+#+BEGIN_SRC emacs-lisp
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable))
+#+END_SRC
+** Web
+#+BEGIN_SRC emacs-lisp
+(use-package emmet-mode
+  :ensure t
+  :init)
+
+(add-hook 'sgml-mode-hook 'emmet-mode)
+(add-hook 'css-mode-hook 'emmet-mode)
+#+END_SRC
+* Variables
+** for config 
+#+BEGIN_SRC emacs-lisp
+(defun config-visit ()
+(interactive)
+(find-file "~/.emacs.d/config.org"))
+(global-set-key (kbd "C-c e") 'config-visit)
+
+(defun config-reload ()
+(interactive)
+(org-babel-load-file (expand-file-name "~/.emacs.d/config.org")))
+(global-set-key (kbd "C-c r") 'config-reload)
+#+END_SRC
