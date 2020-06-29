@@ -1,0 +1,14 @@
+executor 1
+~/tint2-executors/arch-update.sh
+
+executor 2
+uname -sr
+
+executor 3
+psuinfo -Catcd -W0 -N -S' | '
+
+executor 4
+~/tint2-executors/ips.sh
+
+executor 5
+lscpu | grep 'Model name' | cut -f 2 -d ":" | awk '{$1=$1}1'
