@@ -6,6 +6,10 @@
 super + Return
 	termite
 
+# Firefox
+super + alt + f
+	firefox
+
 # program launcher
 super + @space
 	rofi -show run
