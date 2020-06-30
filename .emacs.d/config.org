@@ -13,8 +13,9 @@
 (setq dashboard-center-content t)
 #+END_SRC
 ** Text
-#+BEGIN_SRC emacs-lisp
-  ;; (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
+#+BEGIN_SRC 
+(require 'expand-region)
+(global-set-key (kbd "C-=") 'er/expand-region)
 #+END_SRC
 ** Minor modes
 #+BEGIN_SRC emacs-lisp
