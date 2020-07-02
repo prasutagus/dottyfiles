@@ -12,10 +12,17 @@
 (setq dashboard-startup-banner 'logo)
 (setq dashboard-center-content t)
 #+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(set-frame-parameter (selected-frame) 'alpha '(88 . 70))
+(add-to-list 'default-frame-alist '(alpha . (88 .70)))
+#+END_SRC
 ** Text
-#+BEGIN_SRC 
-(require 'expand-region)
-(global-set-key (kbd "C-=") 'er/expand-region)
+#+BEGIN_SRC emacs-lisp
+(use-package expand-region
+:ensure t
+:config
+(global-set-key (kbd "C-=") 'er/expand-region))
 #+END_SRC
 ** Minor modes
 #+BEGIN_SRC emacs-lisp
@@ -29,6 +36,7 @@
   (show-paren-mode 1)
   (scroll-bar-mode -1)
 #+END_SRC
+
 * Configuration
 ** Helpers
 #+BEGIN_SRC emacs-lisp
@@ -42,6 +50,16 @@
   :ensure t
   :config
   (which-key-mode))
+#+END_SRC
+
+#+BEGIN_SRC emacs-lisp
+(use-package auto-complete
+:ensure t
+:init
+(progn
+(ac-config-default)
+(global-auto-complete-mode t)
+))
 #+END_SRC
 * External Packages
 ** Themes

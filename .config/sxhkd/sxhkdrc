@@ -6,9 +6,16 @@
 super + Return
 	termite
 
-# Firefox
+# Web Browser
 super + alt + f
 	firefox
+# File Manager
+super + alt + t
+      thunar
+
+# Emacs
+super + alt + e
+      emacs
 
 # program launcher
 super + @space
