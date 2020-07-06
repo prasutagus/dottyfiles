@@ -1,16 +1,18 @@
-##### David's qTile Config #####
+##### David's qtile Config #####
 
 ##### IMPORTS #####
 import os
 import subprocess
+
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.lazy import lazy
 from libqtile import layout, bar, widget, hook
-from typing import List  # noqa: F401 ##### SETUP #####
+from typing import List  # noqa: F401
 
-##### Settings #####
+
+##### VARIABLES #####
 mod = "mod4"
-myTerm = "termite"
+myTerm = "alacritty"
 
 ##### KEYBINDINGS #####
 keys = [
@@ -48,19 +50,19 @@ keys = [
     Key([mod, "control"], "r", lazy.restart()),
     Key([mod, "control"], "q", lazy.shutdown()),
     Key([mod], "r", lazy.spawncmd()),
-    
+
     # For MonadTall
-    Key([mod, "shift"], "space", lazy.layout.flip()),    
+    Key([mod, "shift"], "space", lazy.layout.flip()),
     Key([mod], "z", lazy.layout.grow()),
     Key([mod], "m", lazy.layout.shrink()),
     Key([mod], "n", lazy.layout.normalize()),
 
     # Launcher Keys
-    Key([mod], "Return", lazy.spawn("termite")),
+    Key([mod], "Return", lazy.spawn(myTerm)),
     Key([mod, "control"], "f", lazy.spawn("firefox")),
     Key([mod, "control"], "v", lazy.spawn(myTerm+" -e vim")),
     Key([mod, "control"], "m", lazy.spawn(myTerm+" -e thunar")),
-
+    Key([mod, "control"], "e", lazy.spawn("emacs"))
 ]
 ##### GROUPS (WORKSPACES) #####
 groups = [Group(i) for i in "123456789"]
@@ -112,11 +114,29 @@ colors = [["#282a36", "#282a36"], # 0 colour black shade
           ["#3399ff", "#3399ff"]] # 13 colour light blue
 
 
+alt_colors = [["#d5f4e6"],   # 0
+                ["#80ced6"], # 1
+                ["#fefbd8"], # 2
+                ["#618685"], # 3
+                ["#ffef96"], # 4
+                ["#4F84C4"], # 5 Marina
+                ["#b2b2b2"], # 6 Light Grey
+                ["#223A5E"]  # 7 Navy Peony
+]
+
+##### MOUSE CALLBACKS #####
+
+def open_cal(qtile):
+    qtile.cmd_spawn('alacritty -e calcurse')
+
+def run_yay(qtile):
+    qtile.cmd_spawn('alacritty -e yay -Syu')
+    
 ##### WIDGETS (BAR) #####
 
 widget_defaults = dict(
     font='freesans',
-    fontsize=16,
+    fontsize=14,
     padding=3,
 )
 extension_defaults = widget_defaults.copy()
@@ -126,28 +146,44 @@ screens = [
         top=bar.Bar(
             [
                 widget.CurrentLayout(foreground=colors[10], padding=8),
-                widget.GroupBox(inactive='99a3a4', active='f7dc6f', this_current_screen_border=colors[13]),
+                widget.GroupBox(
+                    inactive='99a3a4',
+                    active='f7dc6f',
+                    this_current_screen_border=colors[13],
+                    borderwidth=1
+                ),
                 widget.Prompt(),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.WindowName(),
-                widget.TextBox("davidArch"),
-                widget.DF(format='({uf}{m})', visible_on_warn=False),
-                widget.KeyboardLayout(configured_keyboards=['us', 'gb'], foreground=colors[1]),
-                widget.TextBox("Vol:", foreground=colors[11]),
-                widget.PulseVolume(foreground=colors[11]),
-                widget.Sep(padding=6),
-                widget.CheckUpdates(distro='Arch_checkupdates', colour_no_updates=colors[1], colour_have_updates=colors[10]),
-                widget.Sep(padding=6),
-                widget.CPU(format='CPU {load_percent}%', foreground=colors[9]),
-                widget.Sep(padding=6),
-                widget.Memory(foreground=colors[8]),
-                widget.Sep(padding=6),
-                widget.Clock(format='%A, %d %B %Y %H:%M'),
-                widget.Sep(padding=6),
+                widget.TextBox(
+                    text="davidArch"),
+                widget.DF(format='SSD Free: {uf}{m})', visible_on_warn=False),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.KeyboardLayout(fmt='kbd {}', configured_keyboards=['gb', 'us']),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.PulseVolume(fmt='Vol: {}'),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.CheckUpdates(
+                    distro="Arch_checkupdates",
+                    colour_no_updates=colors[1],
+                    colour_have_updates=colors[3],
+                    mouse_callbacks={'Button1': run_yay}),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.CPU(format='CPU {load_percent}%'),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.Memory(format='Mem Used: {MemUsed}Mb'),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.Clock(
+                    format='%A, %d %B %Y %H:%M',
+                    mouse_callbacks={'Button1': open_cal}
+                ),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.Systray(icon_size=24),
-                widget.QuickExit(foreground=colors[7], padding=8),
+                widget.QuickExit(default_text="[Exit]",
+                    foreground=colors[3], padding=8),
             ],
             28,
-            background=colors[12],
+            background=alt_colors[7],
             margin=[2, 0, 2, 0],
         ),
     ),

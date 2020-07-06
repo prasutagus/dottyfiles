@@ -83,7 +83,6 @@ call minpac#add('mhartington/oceanic-next')
 call minpac#add('preservim/nerdtree')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('carakan/new-railscasts-theme')
-call minpac#add('klen/python-mode')
 
 " Define user commands for updating/cleaning the plugins.
 " Each of them loads minpac, reloads .vimrc to register the
