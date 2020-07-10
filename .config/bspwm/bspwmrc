@@ -8,6 +8,7 @@ feh --randomize --bg-fill ~/Pictures/backgrounds/new_wallpapers &
 picom &
 setxkbmap -layout gb &
 dunst &
+killall -q polybar
 polybar mybspwmbar &
 killall "nm-applet"
 nm-applet &

@@ -87,15 +87,16 @@ cursor-click = pointer
 cursor-scroll = ns-resize
 
 ;==================================================================================================
-; Spare Bar - curently for BSPWM
+; Bar for BSPWM
 ;==================================================================================================
 
 [bar/mybspwmbar]
+terminal = alacritty
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
-;offset-x = 1%
-offset-y = 1
+; offset-x = 1%
+; offset-y = 1%
 ; radius = 6.0
 fixed-center = false
 
@@ -105,8 +106,8 @@ foreground = ${colors.foreground}
 line-size = 3
 line-color = #f00
 
-border-size = 1
-border-color = #666699
+; border-size = 1
+; border-color = #666699
 
 ; padding-left = 0
 ; padding-right = 2
@@ -117,15 +118,15 @@ module-margin-left = 1
 module-margin-right = 2
 
 font-0 = FreeSans Regular:pixelsize=12;1
-font-1 = FreeSans Regular:pixelsize=14;1
+font-1 = FreeSans Bold:pixelsize=14;1
 font-2 = unifont:fontformat=truetype:size=12:antialias=false;0
 font-3 = siji:pixelsize=10;1
 ; font-0 = fixed:pixelsize=10;1
 ; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 ; font-2 = siji:pixelsize=10;1
 
-modules-left = bspwm xwindow
-modules-center = mpd
+modules-left = bspwm
+modules-center = mpd xwindow
 modules-right = update-arch kernel hdd xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
@@ -275,8 +276,8 @@ label-urgent-underline = #9b0a20
 ;   %index%
 ; Default: %icon%  %name%
 label-empty = %icon% %name%
-label-empty-foreground = #550
-label-empty-font = 1
+label-empty-foreground = #99ccff
+label-empty-font = 0
 label-empty-padding = 2
 
 [module/bspwm]
@@ -286,6 +287,7 @@ label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
+label-focused-font = 2
 
 label-occupied = %index%
 label-occupied-padding = 2
@@ -295,7 +297,7 @@ label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
+label-empty-foreground = #8585ad
 label-empty-padding = 2
 
 ; Separator in between workspaces
@@ -377,7 +379,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " CPU used:"
+format-prefix = " CPU: "
 format-prefix-foreground = #8585ad
 format-underline = #f90000
 label = %percentage:2%%
@@ -385,7 +387,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "  Mem used: "
+format-prefix = "  Mem: "
 format-prefix-foreground = #8585ad
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -432,8 +434,8 @@ format-disconnected =
 type = internal/date
 interval = 5
 
-date = " %A, %d %B %Y"
-date-alt = " %d-%B"
+date = %a, %d %B %Y
+date-alt = %d-%B
 
 time = %H:%M
 time-alt = %H:%M:%S %Z
@@ -448,7 +450,7 @@ label = %date% %time%
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %percentage%%
+label-volume = VOL %{F#6699ff}%percentage%%{F-}%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
@@ -587,9 +589,10 @@ menu-2-1-exec = menu-open-0
 [module/update-arch]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
-format-prefix = "Updates Available: "
+format-prefix = "Updates: "
 format-underline = #55aa55
 interval = 600
+click-left = alacritty -e yay -Syu
 
 [module/hdd]
 type = custom/script
@@ -604,8 +607,8 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-;pseudo-transparency = false
-;
+; pseudo-transparency = false
+
 
 [global/wm]
 margin-top = 5

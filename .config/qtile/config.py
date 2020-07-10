@@ -4,6 +4,8 @@
 import os
 import subprocess
 
+from libqtile.widget import base
+
 from libqtile.config import Key, Screen, Group, Drag, Click
 from libqtile.lazy import lazy
 from libqtile import layout, bar, widget, hook
@@ -17,19 +19,17 @@ myTerm = "alacritty"
 ##### KEYBINDINGS #####
 keys = [
     # Switch between windows in current stack pane
-    Key([mod], "k", lazy.layout.down()),
-    Key([mod], "j", lazy.layout.up()),
+    Key([mod], "j", lazy.layout.down()),
+    Key([mod], "k", lazy.layout.up()),
 
     Key([mod], "h", lazy.layout.left()),
     Key([mod], "l", lazy.layout.right()),
 
-    Key([mod, "shift"], "h", lazy.layout.swap_left()),
-    Key([mod, "shift"], "l", lazy.layout.swap_right()),
-    Key([mod, "shift"], "j", lazy.layout.shuffle_down()),
-    Key([mod, "shift"], "k", lazy.layout.shuffle_up()),
-    # Move windows up or down in current stack
-    # Key([mod, "control"], "k", lazy.layout.shuffle_down()),
-    # Key([mod, "control"], "j", lazy.layout.shuffle_up()),
+    # Move windows left, right,up or down in current stack
+    Key([mod, "control"], "h", lazy.layout.swap_left()),
+    Key([mod, "control"], "l", lazy.layout.swap_right()),
+    Key([mod, "control"], "k", lazy.layout.shuffle_up()),
+    Key([mod, "control"], "j", lazy.layout.shuffle_down()),
 
     # Switch window focus to other pane(s) of stack
     Key([mod], "space", lazy.layout.next()),
@@ -64,7 +64,7 @@ keys = [
     Key([mod, "control"], "m", lazy.spawn(myTerm+" -e thunar")),
     Key([mod, "control"], "e", lazy.spawn("emacs"))
 ]
-##### GROUPS (WORKSPACES) #####
+##### GROUPS (WORdKSPACES) #####
 groups = [Group(i) for i in "123456789"]
 
 for i in groups:
@@ -131,7 +131,10 @@ def open_cal(qtile):
 
 def run_yay(qtile):
     qtile.cmd_spawn('alacritty -e yay -Syu')
-    
+
+ 
+
+
 ##### WIDGETS (BAR) #####
 
 widget_defaults = dict(
@@ -156,7 +159,8 @@ screens = [
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.WindowName(),
                 widget.TextBox(
-                    text="davidArch"),
+                    text="davidArch",
+                ),
                 widget.DF(format='SSD Free: {uf}{m})', visible_on_warn=False),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.KeyboardLayout(fmt='kbd {}', configured_keyboards=['gb', 'us']),
@@ -179,12 +183,15 @@ screens = [
                 ),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.Systray(icon_size=24),
-                widget.QuickExit(default_text="[Exit]",
-                    foreground=colors[3], padding=8),
+                widget.QuickExit(
+                    foreground=colors[3],
+                    padding=10,
+                    font='Liberation Mono'
+                ),
             ],
             28,
             background=alt_colors[7],
-            margin=[2, 0, 2, 0],
+            margin=[1, 0, 2, 0],
         ),
     ),
 ]
