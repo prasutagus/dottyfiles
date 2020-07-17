@@ -69,10 +69,6 @@
 ))
 #+END_SRC
 
-#+BEGIN_SRC emacs-lisp
-(require 'neotree)
-(global-set-key [f8] 'neotree-toggle)
-#+END_SRC
 * External Packages
 ** Themes
 #+BEGIN_SRC emacs-lisp

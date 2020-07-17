@@ -3,7 +3,6 @@
 ##### IMPORTS #####
 import os
 import subprocess
-
 from libqtile.widget import base
 
 from libqtile.config import Key, Screen, Group, Drag, Click
@@ -14,7 +13,7 @@ from typing import List  # noqa: F401
 
 ##### VARIABLES #####
 mod = "mod4"
-myTerm = "alacritty"
+myTerm = "termite"
 
 ##### KEYBINDINGS #####
 keys = [
@@ -127,12 +126,10 @@ alt_colors = [["#d5f4e6"],   # 0
 ##### MOUSE CALLBACKS #####
 
 def open_cal(qtile):
-    qtile.cmd_spawn('alacritty -e calcurse')
+    qtile.cmd_spawn('xterm -e calcurse')
 
 def run_yay(qtile):
-    qtile.cmd_spawn('alacritty -e yay -Syu')
-
- 
+    qtile.cmd_spawn('xterm -e yay -Syu')
 
 
 ##### WIDGETS (BAR) #####
@@ -158,10 +155,9 @@ screens = [
                 widget.Prompt(),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.WindowName(),
-                widget.TextBox(
-                    text="davidArch",
-                ),
-                widget.DF(format='SSD Free: {uf}{m})', visible_on_warn=False),
+                widget.CPU(format='CPU {load_percent}%', padding=6),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.DF(format='SSD Free: {uf}{m}', visible_on_warn=False),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.KeyboardLayout(fmt='kbd {}', configured_keyboards=['gb', 'us']),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
@@ -172,8 +168,6 @@ screens = [
                     colour_no_updates=colors[1],
                     colour_have_updates=colors[3],
                     mouse_callbacks={'Button1': run_yay}),
-                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
-                widget.CPU(format='CPU {load_percent}%'),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.Memory(format='Mem Used: {MemUsed}Mb'),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),

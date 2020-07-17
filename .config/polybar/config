@@ -33,7 +33,7 @@ alert = #bd2c40
 
 [bar/mybar]
 
-terminal = termite
+;terminal = termite
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 30
@@ -91,7 +91,7 @@ cursor-scroll = ns-resize
 ;==================================================================================================
 
 [bar/mybspwmbar]
-terminal = alacritty
+;terminal = alacritty
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
@@ -592,7 +592,7 @@ exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 format-prefix = "Updates: "
 format-underline = #55aa55
 interval = 600
-click-left = alacritty -e yay -Syu
+click-left = $TERMINAL -e yay -Syu
 
 [module/hdd]
 type = custom/script

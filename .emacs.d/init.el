@@ -33,7 +33,7 @@
  '(objed-cursor-color "#BF616A")
  '(package-selected-packages
    (quote
-    (neotree expand-region spacegray-theme subatomic-theme immaterial-theme emmet-mode spaceline dashboard which-key use-package smartparens railscasts-reloaded-theme flycheck elpy dracula-theme better-defaults autopair auto-complete)))
+    (expand-region spacegray-theme subatomic-theme immaterial-theme emmet-mode spaceline dashboard which-key use-package smartparens railscasts-reloaded-theme flycheck elpy dracula-theme better-defaults autopair auto-complete)))
  '(pdf-view-midnight-colors (cons "#ECEFF4" "#2E3440"))
  '(rustic-ansi-faces
    ["#2E3440" "#BF616A" "#A3BE8C" "#EBCB8B" "#81A1C1" "#B48EAD" "#88C0D0" "#ECEFF4"])
