@@ -3,6 +3,7 @@
 ##### IMPORTS #####
 import os
 import subprocess
+import iwlib
 from libqtile.widget import base
 
 from libqtile.config import Key, Screen, Group, Drag, Click
@@ -108,7 +109,7 @@ colors = [["#282a36", "#282a36"], # 0 colour black shade
           ["#e1acff", "#e1acff"], # 8 colour mauve
           ["#9999e6", "#9999e6"], # 9 colour light blue
           ["#40bf80", "#40bf80"], # 10 colour light green
-          ["#ffcc00", "#ffcc00"], # 11 colour yellow
+          ["#ffff00", "#ffff00"], # 11 colour yellow
           ["#364d63", "#364d63"], # 12 colour blue/grey panel alt
           ["#3399ff", "#3399ff"]] # 13 colour light blue
 
@@ -157,9 +158,11 @@ screens = [
                 widget.WindowName(),
                 widget.CPU(format='CPU {load_percent}%', padding=6),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
+                widget.Wlan(interface='wlp46s0', format='{essid} @ {percent:2.0%}', foreground=colors[10]),
+                widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.DF(format='SSD Free: {uf}{m}', visible_on_warn=False),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
-                widget.KeyboardLayout(fmt='kbd {}', configured_keyboards=['gb', 'us']),
+                widget.KeyboardLayout(fmt='kbd {}', configured_keyboards=['gb', 'us'], foreground=colors[5]),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.PulseVolume(fmt='Vol: {}'),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
@@ -173,6 +176,7 @@ screens = [
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
                 widget.Clock(
                     format='%A, %d %B %Y %H:%M',
+                    foreground=colors[11],
                     mouse_callbacks={'Button1': open_cal}
                 ),
                 widget.Sep(foreground=colors[10], padding=6, size_percent=60),
