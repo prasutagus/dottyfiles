@@ -38,8 +38,8 @@ alert = #bd2c40
 width = 100%
 height = 30
 ;offset-x = 1%
-offset-y = 2
-radius = 2.0
+;offset-y = 1%
+;radius = 2.0
 fixed-center = false
 
 background = ${colors.background}
@@ -51,8 +51,8 @@ line-color = #f00
 border-size = 2
 border-color = #666699
 
-; padding-left = 0
-; padding-right = 2
+padding-left = 0
+padding-right = 2
 padding = 2
 
 module-margin-left = 1
@@ -195,7 +195,7 @@ interval 1024
 format-foreground = ${colors.foreground}
 format-background = ${colors.background-alt}
 format-prefix-foreground = #0084FF
-format-underline = #0084FF
+format-underline = #6699FF
 
 [module/ewmh]
 type = internal/xworkspaces
@@ -399,13 +399,13 @@ interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
-label-connected = %essid%
+label-connected = %essid% - %signal%
 
-; format-disconnected =
-format-disconnected = <label-disconnected>
+format-disconnected =
+;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
@@ -424,11 +424,11 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-format-disconnected =
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${self.format-connected-underline}
-;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.foreground-alt}
+;format-disconnected =
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${self.format-connected-underline}
+label-disconnected = %ifname% disconnected
+label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
@@ -456,7 +456,7 @@ label-volume-foreground = ${root.foreground}
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
-bar-volume-width = 10
+bar-volume-width = 8
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -597,8 +597,8 @@ click-left = $TERMINAL -e yay -Syu
 [module/hdd]
 type = custom/script
 exec = ~/.config/polybar/scripts/hdd.sh
-format-prefix = "Disk Free: "
-format-underline = #55aa55
+format-prefix = "%{F#6699ff}Disk Free: %{F-}"
+format-underline = #6699ff
 interval = 600
 
 [settings]
@@ -615,3 +615,4 @@ margin-top = 5
 margin-bottom = 0
 
 ; vim:ft=dosini
+
