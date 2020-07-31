@@ -65,8 +65,8 @@ font-2 = unifont:fontformat=truetype:size=12:antialias=false;0
 font-3 = siji:pixelsize=10;1
 
 modules-left = ewmh
-modules-center = mpd
-modules-right = update-arch kernel hdd xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-center = mpd xwindow
+modules-right = update-arch hdd xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -127,7 +127,7 @@ font-3 = siji:pixelsize=10;1
 
 modules-left = bspwm
 modules-center = mpd xwindow
-modules-right = update-arch kernel hdd xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-right = update-arch xkeyboard hdd xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -147,6 +147,7 @@ scroll-down = bspwm-deskprev
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+click-right = ./xmenu/xmenu.sh &
 ;==============================================================================================;
 ; Modules
 ;===============================================================================================
@@ -379,7 +380,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " CPU: "
+format-prefix = " %{F#6699ff}CPU: %{F-}"
 format-prefix-foreground = #8585ad
 format-underline = #f90000
 label = %percentage:2%%
@@ -387,7 +388,7 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "  Mem: "
+format-prefix = "  %{F#6699ff}Mem: %{F-}"
 format-prefix-foreground = #8585ad
 format-underline = #4bffdc
 label = %percentage_used%%
@@ -434,23 +435,24 @@ label-disconnected-foreground = ${colors.foreground-alt}
 type = internal/date
 interval = 5
 
-date = %a, %d %B %Y
-date-alt = %d-%B
+date =
+date-alt = %a, %d %B %Y
 
 time = %H:%M
 time-alt = %H:%M:%S %Z
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = #6699ff
 label = %date% %time%
+label-font = 2
 
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = VOL %{F#6699ff}%percentage%%{F-}%
+label-volume = %{F#6699ff}VOL:%{F-} %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
@@ -589,8 +591,8 @@ menu-2-1-exec = menu-open-0
 [module/update-arch]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
-format-prefix = "Updates: "
-format-underline = #55aa55
+format-prefix = "%{F#6699ff}Updates: %{F-}"
+format-underline = #6699ff
 interval = 600
 click-left = $TERMINAL -e yay -Syu
 
@@ -600,6 +602,7 @@ exec = ~/.config/polybar/scripts/hdd.sh
 format-prefix = "%{F#6699ff}Disk Free: %{F-}"
 format-underline = #6699ff
 interval = 600
+
 
 [settings]
 screenchange-reload = true

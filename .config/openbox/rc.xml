@@ -369,7 +369,7 @@
     </keybind>
     <keybind key="A-F3">
       <action name="Execute">
-        <command>dmenu_run</command>
+        <command>dmenu_run -c -l 12</command>
         <startupnotify>
           <enabled>yes</enabled>
           <name>dmenu</name>

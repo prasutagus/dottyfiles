@@ -19,11 +19,15 @@ super + alt + e
 
 # program launcher
 super + @space
-	rofi -show run
+	dmenu_run -c -l 12
 
 # make sxhkd reload its configuration files:
 super + Escape
 	pkill -USR1 -x sxhkd
+
+# using xmenu
+super + ctrl + Return
+	./xmenu/xmenu.sh
 
 #
 # bspwm hotkeys
