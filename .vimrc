@@ -3,21 +3,14 @@
 " source $VIMRUNTIME/defaults.vim
 
 " Settings
-
 syntax on
 set laststatus=2
 set cmdheight=2
 set title
 set wildmode=list:longest,full
-" set number
-" set nobackup
+set number
+set nobackup
 set noswapfile
-" set nowritebackup
-
-set backupdir=~/temp//
-set directory=~/temp//
-set undodir=~/temp//
-
 set incsearch
 set backspace=indent,eol,start
 set autoindent
@@ -80,6 +73,7 @@ call minpac#add('itchyny/lightline.vim')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('nerdpad/dracula-vim')
 call minpac#add('mhartington/oceanic-next')
+call minpac#add('fatih/vim-go')
 call minpac#add('preservim/nerdtree')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('carakan/new-railscasts-theme')

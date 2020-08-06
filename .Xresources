@@ -7,7 +7,7 @@ Xft.hintstyle:  hintfull
 
 ! -- Fonts -- !
 /* *.font:		xft:Monospace Regular:pixelsize=14 */
-xterm*faceName: Liberation Mono:pixelsize=14
+xterm*faceName: Hack:pixelsize=14
 
 
 ! Railscast Dark Scheme
@@ -86,7 +86,7 @@ xmenu.background: #666699
 xmenu.foreground: #ffffff
 xmenu.selbackground: #f0f0f5
 xmenu.selforeground: #33334d
-xmenu.border: #00cc66
+xmenu.border: #808080
 xmenu.borderWidth: 2
 xmenu.separator: #ccffe6
 xmenu.gap: 10
