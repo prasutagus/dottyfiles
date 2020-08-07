@@ -17,12 +17,13 @@
 # xfce-mcs-manager &
 
 # tint2 &
-polybar mybar &
+$HOME/.config/polybar/launch_openbox.sh
+# polybar mybar &
 picom  &
 (sleep 3s && plank) &
 thunar --daemon &
 (sleep 3s && nm-applet) &
 volumeicon &
-feh --bg-scale --randomize ~/Pictures/backgrounds/dark_pics &
+feh --bg-scale --randomize ~/Pictures/backgrounds/japan &
 setxkbmap -layout gb &
 dunst &

@@ -4,13 +4,14 @@ bspc rule -r "*"
 
 ####--- Autostarts ---####
 sxhkd &
+$HOME/.config/polybar/launch.sh
 # feh --randomize --bg-fill ~/Pictures/backgrounds/dark_pics &
 nitrogen --restore &
 picom &
 setxkbmap -layout gb &
 dunst &
-killall -q polybar
-polybar mybspwmbar &
+#killall -q polybar
+#polybar mybspwmbar &
 killall "nm-applet"
 nm-applet &
 killall "volumeicon"
