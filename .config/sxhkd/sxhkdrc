@@ -99,6 +99,14 @@ super + {o,i}
 super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
+
+# swap active desktop for desktop {1-9}
+super + {_,ctrl + }{1-9,0}
+	bspc {desktop -s,node -d} '^{1-9,10}' --follow
+
+
+
+
 #
 # preselect
 #
@@ -134,6 +142,7 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
+
 
 # volume control
 XF86AudioLowerVolume
