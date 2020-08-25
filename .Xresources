@@ -7,7 +7,7 @@ Xft.hintstyle:  hintfull
 
 ! -- Fonts -- !
 /* *.font:		xft:Monospace Regular:pixelsize=14 */
-xterm*faceName: Hack:pixelsize=14
+xterm.vt100.faceName: Hack:size=10
 
 
 ! Railscast Dark Scheme

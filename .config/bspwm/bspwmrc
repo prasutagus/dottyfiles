@@ -3,7 +3,7 @@
 bspc rule -r "*"
 
 ####--- Autostarts ---####
-sxhkd &
+pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
 # feh --randomize --bg-fill ~/Pictures/backgrounds/dark_pics &
 nitrogen --restore &
