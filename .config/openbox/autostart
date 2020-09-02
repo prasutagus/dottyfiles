@@ -24,6 +24,6 @@ picom  &
 thunar --daemon &
 (sleep 3s && nm-applet) &
 volumeicon &
-feh --bg-scale --randomize ~/Pictures/backgrounds/japan &
+feh --bg-scale --randomize ~/Pictures/backgrounds/combi_pics &
 setxkbmap -layout gb &
 dunst &
