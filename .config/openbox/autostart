@@ -19,7 +19,7 @@
 # tint2 &
 $HOME/.config/polybar/launch_openbox.sh
 # polybar mybar &
-picom  &
+picom  -f &
 (sleep 3s && plank) &
 thunar --daemon &
 (sleep 3s && nm-applet) &
