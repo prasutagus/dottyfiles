@@ -33,15 +33,13 @@ nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>bb :buffers<CR>:buffer<space>
 
-let g:netrw_bnner = 0
+let g:netrw_banner = 0
 let g:netrw_liststyle = 3
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
 let g:netrw_winsize = 20
 
 map <F6> :Lexplore<CR>
-
-map <C-n> :NERDTreeToggle<CR>
 
 let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.local/share/UltiSnips'] 
 
@@ -72,9 +70,7 @@ call minpac#add('tpope/vim-commentary')
 call minpac#add('itchyny/lightline.vim')
 call minpac#add('mattn/emmet-vim')
 call minpac#add('nerdpad/dracula-vim')
-call minpac#add('mhartington/oceanic-next')
 call minpac#add('fatih/vim-go')
-call minpac#add('preservim/nerdtree')
 call minpac#add('jiangmiao/auto-pairs')
 call minpac#add('carakan/new-railscasts-theme')
 

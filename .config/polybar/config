@@ -300,7 +300,7 @@ label-focused-font = 2
 label-occupied = %index%
 label-occupied-padding = 2
 ; label-occupied-underline = ${colors.primary}
-label-occupied-foreground = ${colors.color-ul-blue}
+label-occupied-foreground = ${colors.color-ul-red}
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
