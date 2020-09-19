@@ -18,62 +18,50 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #cc222222
-background-alt = #cc29293d
+background = #b31e1e1e
+background-alt = #b31e1e1e
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
+foreground-icon = #8c8c8c
 primary = #ffb52a
-secondary = #80002f
-info = #cc4400
+secondary = #e60053
 alert = #bd2c40
 
-; My Colours
-color-connected = #33cc33
-color-disconnected = #b3b3b3
-color-ul-blue = #6699ff
-color-ul-red = #f90000
-color-green = #339966
-;===============================================================================================
-; Bar for Openbox
-;===============================================================================================
-
 [bar/mybar]
-
-;terminal = termite
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
-height = 30
+height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-;radius = 2.0
+radius = 0
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = #ffb52a
 
-border-size = 1
-border-color = #666699
+border-size = 0
+border-color = #00000000
 
 padding-left = 0
-padding-right = 2
-padding = 2
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-; font-0 = fixed:pixelsize=10;1
-font-0 = FreeSans Regular:pixelsize=12;1
-font-1 = FreeSans Regular:pixelsize=14;1
-font-2 = unifont:fontformat=truetype:size=12:antialias=false;0
-font-3 = siji:pixelsize=12;1
+font-0 = fixed:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = Font Awesome 5 Free:pixelsize=10;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = ewmh
-modules-center = mpd xwindow
-modules-right = update-arch hdd xbacklight pulseaudio xkeyboard memory cpu wlan eth battery temperature date powermenu
+modules-center = xwindow
+modules-right = update-arch filesystem pulseaudio xkeyboard memory cpu wlan eth temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -93,48 +81,43 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-;==================================================================================================
-; Bar for BSPWM
-;==================================================================================================
+separator = " | "
+
 
 [bar/mybspwmbar]
-;terminal = alacritty
 ;monitor = ${env:MONITOR:HDMI-1}
 width = 100%
 height = 27
-; offset-x = 1%
-; offset-y = 1%
-; radius = 6.0
+;offset-x = 1%
+;offset-y = 1%
+radius = 0
 fixed-center = false
 
-background = ${colors.background-alt}
+background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = #ffb52a
 
-; border-size = 1
-; border-color = #666699
+border-size = 0
+border-color = #00000000
 
-; padding-left = 0
-; padding-right = 2
-padding = 2
-
+padding-left = 0
+padding-right = 1
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
-font-0 = FreeSans Regular:pixelsize=12;1
-font-1 = FreeSans Bold:pixelsize=14;1
-font-2 = unifont:fontformat=truetype:size=12:antialias=false;0
-font-3 = siji:pixelsize=12;1
-; font-0 = fixed:pixelsize=10;1
-; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-; font-2 = siji:pixelsize=10;1
+font-0 = fixed:pixelsize=12;1
+font-1 = unifont:fontformat=truetype:size=12:antialias=false;0
+font-2 = siji:pixelsize=12;1
+font-3 = Font Awesome 5 Free:pixelsize=10;2
+font-4 = Font Awesome 5 Free Solid:pixelsize=10;2
+font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = bspwm
-modules-center = mpd xwindow
-modules-right = update-arch xkeyboard hdd xbacklight pulseaudio memory cpu wlan eth battery temperature date powermenu
+modules-center = xwindow
+modules-right = update-arch filesystem pulseaudio xkeyboard memory cpu wlan eth temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -145,8 +128,8 @@ tray-padding = 2
 
 ;override-redirect = true
 
-scroll-up = bspwm-desknext
-scroll-down = bspwm-deskprev
+;scroll-up = bspwm-desknext
+;scroll-down = bspwm-deskprev
 
 ;scroll-up = i3wm-wsnext
 ;scroll-down = i3wm-wsprev
@@ -154,30 +137,23 @@ scroll-down = bspwm-deskprev
 cursor-click = pointer
 cursor-scroll = ns-resize
 
-click-right = ./xmenu/xmenu.sh &
-;==============================================================================================;
-; Modules
-;===============================================================================================
+separator = " | "
+
 
 [module/xwindow]
 type = internal/xwindow
-format = <label>
-format-background = ${colors.background-alt}
-format-foreground = ${colors.foreground}
-format-padding = 4
 label = %title:0:30:...%
-; label-maxlen = 50
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.color-ul-red}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-icon}
+format-prefix-underline = ${colors.secondary}
 
 label-layout = %layout%
-label-layout-underline = ${colors.color-ul-red}
+label-layout-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -190,124 +166,30 @@ interval = 25
 
 mount-0 = /
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-mounted =  %free%
+label-mounted-foreground = ${colors.foreground-icon}
+label-mounted-underline = ${colors.primary}
+;format-prefix-foreground =${colors.foreground-icon}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
-
-[module/kernel]
-type = custom/script
-exec = uname -sr
-tail = false
-interval 1024
-
-format-foreground = ${colors.foreground}
-format-background = ${colors.background-alt}
-format-prefix-foreground = #0084FF
-format-underline = #6699FF
-
-[module/ewmh]
-type = internal/xworkspaces
-
-; Only show workspaces defined on the same output as the bar
-;
-; Useful if you want to show monitor specific workspaces
-; on different bars
-;
-; Default: false
-; pin-workspaces = true
-
-; Create click handler used to focus desktop
-; Default: true
-enable-click = false
-
-; Create scroll handlers used to cycle desktops
-; Default: true
-enable-scroll = false
-
-; icon-[0-9]+ = <desktop-name>;<icon>
-; NOTE: The desktop name needs to match the name configured by the WM
-; You can get a list of the defined desktops using:
-; $ xprop -root _NET_DESKTOP_NAMES
-; Note: Neither <desktop-name> nor <icon> can contain a semicolon (;)
-; icon-0 = code;♚
-; icon-1 = office;♛
-; icon-2 = graphics;♜
-; icon-3 = mail;♝
-; icon-4 = web;♞
-; icon-default = ♟
-
-; Available tags:
-;   <label-monitor>
-;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
-; Default: <label-state>
-format = <label-state>
-
-; Available tokens:
-;   %name%
-; Default: %name%
-label-monitor = %name%
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-active = %icon% %name%
-label-active-foreground = #ffffff
-label-active-background = #3f3f3f
-label-active-underline = #fba922
-label-active-font = 2
-label-active-padding = 3
-
-; (unreleased)
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-occupied = %icon% %name%
-label-occupied-underline = #555555
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-urgent = %icon% %name%
-label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-underline = #9b0a20
-
-; Available tokens:
-;   %name%
-;   %icon%
-;   %index%
-; Default: %icon%  %name%
-label-empty = %icon% %name%
-label-empty-foreground = #99ccff
-label-empty-font = 0
-label-empty-padding = 2
 
 [module/bspwm]
 type = internal/bspwm
 
 label-focused = %index%
 label-focused-background = ${colors.background-alt}
-label-focused-underline = ${colors.primary}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
-label-focused-font = 2
 
 label-occupied = %index%
 label-occupied-padding = 2
-; label-occupied-underline = ${colors.primary}
-label-occupied-foreground = ${colors.color-ul-red}
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty = %index%
-label-empty-foreground = #8585ad
+label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
 ; Separator in between workspaces
@@ -389,17 +271,17 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = " %{F#6699ff}CPU: %{F-}"
-format-prefix-foreground = #8585ad
-format-underline = ${colors.color-ul-red}
+format-prefix = " "
+format-prefix-foreground =${colors.foreground-icon}
+format-underline = #f90000
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "  %{F#6699ff}Mem: %{F-}"
-format-prefix-foreground = #8585ad
-format-underline = ${colors.color-ul-blue}
+format-prefix = " "
+format-prefix-foreground = ${colors.foreground-icon}
+format-underline = #4bffdc
 label = %percentage_used%%
 
 [module/wlan]
@@ -408,7 +290,7 @@ interface = wlp46s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.color-connected}
+format-connected-underline = #9f78e1
 label-connected = %essid% - %signal%
 
 format-disconnected =
@@ -417,58 +299,56 @@ format-disconnected =
 ;label-disconnected = %ifname% disconnected
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
-ramp-signal-0 = 
-ramp-signal-1 = 
-ramp-signal-2 = 
-ramp-signal-3 = 
-ramp-signal-4 = 
-ramp-signal-foreground = ${colors.foreground-alt}
+ramp-signal-0 =  
+ramp-signal-1 =  
+ramp-signal-2 =  
+ramp-signal-3 =  
+ramp-signal-4 =  
+ramp-signal-foreground = ${colors.foreground-icon}
 
 [module/eth]
 type = internal/network
 interface = enp51s0
 interval = 3.0
 
-format-connected-underline = ${colors.color-connected}
+format-connected-underline = #55aa55
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
-;format-disconnected =
-format-disconnected = <label-disconnected>
-/* format-disconnected-underline = ${self.format-connected-underline} */
-format-disconnected-underline = ${colors.color-disconnected}
-label-disconnected = %ifname% disconnected
-label-disconnected-foreground = ${colors.foreground-alt}
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;format-disconnected-underline = ${self.format-connected-underline}
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.foreground-alt}
 
 [module/date]
 type = internal/date
 interval = 5
 
 date =
-date-alt = %a, %d %B %Y
+date-alt = " %Y-%m-%d"
 
 time = %H:%M
-time-alt = %H:%M %Z
+time-alt = %H:%M:%S
 
-format-prefix = 
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.color-ul-blue}
+format-prefix = 
+format-prefix-foreground = ${colors.foreground-icon}
+format-underline = #0a6cf5
+
 label = %date% %time%
-label-font = 2
-
 
 [module/pulseaudio]
 type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
-label-volume = %{F#6699ff}VOL:%{F-} %percentage%%
+label-volume =  %percentage%%
 label-volume-foreground = ${root.foreground}
 
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
-bar-volume-width = 8
+bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -484,7 +364,6 @@ bar-volume-fill-font = 2
 bar-volume-empty = ─
 bar-volume-empty-font = 2
 bar-volume-empty-foreground = ${colors.foreground-alt}
-
 
 [module/alsa]
 type = internal/alsa
@@ -553,18 +432,19 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.color-ul-red}
+format-underline = #f50a4d
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
+format-prefix-foreground = ${colors.foreground-icon}
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+ramp-0 =  
+;ramp-1 = 
+;ramp-2 = 
+ramp-foreground = ${colors.foreground-icon}
 
 [module/powermenu]
 type = custom/menu
@@ -573,14 +453,12 @@ expand-right = true
 
 format-spacing = 1
 
-; label-open = Exit
 label-open = 
-label-open-foreground = ${colors.color-ul-red}
+label-open-foreground = ${colors.secondary}
 label-close =  cancel
-label-close-foreground = ${colors.color-ul-red}
+label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
-
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
@@ -598,21 +476,105 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 
+[module/ewmh]
+type = internal/xworkspaces
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = true
+
+; Create click handler used to focus desktop
+; Default: true
+enable-click = false
+
+; Create scroll handlers used to cycle desktops
+; Default: true
+enable-scroll = false
+
+; icon-[0-9]+ = <desktop-name>;<icon>
+; NOTE: The desktop name needs to match the name configured by the WM
+; You can get a list of the defined desktops using:
+; $ xprop -root _NET_DESKTOP_NAMES
+; Note: Neither <desktop-name> nor <icon> can contain a semicolon (;)
+; icon-0 = code;♚
+; icon-1 = office;♛
+; icon-2 = graphics;♜
+; icon-3 = mail;♝
+; icon-4 = web;♞
+; icon-default = ♟
+
+; Available tags:
+;   <label-monitor>
+;   <label-state> - gets replaced with <label-(active|urgent|occupied|empty)>
+; Default: <label-state>
+format = <label-state>
+
+; Available tokens:
+;   %name%
+; Default: %name%
+label-monitor = %name%
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-active = %icon% %name%
+label-active-foreground = #ffffff
+label-active-background = #3f3f3f
+label-active-underline = #fba922
+label-active-font = 2
+label-active-padding = 3
+
+; (unreleased)
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+;label-occupied = %icon% %name%
+;label-occupied-underline = #555555
+
+label-occupied = %index%
+label-occupied-padding = 2
+label-occupied-underline = ${colors.primary}
+label-occupied-foreground = ${colors.foreground-icon}
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-urgent = %icon% %name%
+label-urgent-foreground = #000000
+label-urgent-background = #bd2c40
+label-urgent-underline = #9b0a20
+
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+; Default: %icon%  %name%
+label-empty = %icon% %name%
+label-empty-foreground = #99ccff
+label-empty-font = 0
+label-empty-padding = 2
+
+
 [module/update-arch]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
-format-prefix = "%{F#6699ff}Updates: %{F-}"
-format-underline = ${colors.color-ul-blue}
+format-prefix = "%{F#6699ff}   %{F-}"
+format-underline = ${colors.secondary}
 interval = 600
 
 click-left = $TERMINAL -e yay -Syu
 
-[module/hdd]
-type = custom/script
-exec = ~/.config/polybar/scripts/hdd.sh
-format-prefix = "%{F#6699ff}Disk Free: %{F-}"
-format-underline = ${colors.color-ul-blue}
-interval = 600
+
 
 
 [settings]
@@ -621,12 +583,10 @@ screenchange-reload = true
 ;compositing-background = screen
 ;compositing-foreground = source
 ;compositing-border = over
-; pseudo-transparency = false
-
+;pseudo-transparency = false
 
 [global/wm]
 margin-top = 5
-margin-bottom = 0
+margin-bottom = 5
 
 ; vim:ft=dosini
-
