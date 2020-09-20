@@ -117,7 +117,7 @@ font-5 = Font Awesome 5 Brands:pixelsize=10;2
 
 modules-left = bspwm
 modules-center = xwindow
-modules-right = update-arch filesystem pulseaudio xkeyboard memory cpu wlan eth temperature date powermenu
+modules-right = cpu update-arch filesystem pulseaudio xkeyboard memory wlan eth temperature date powermenu
 
 tray-position = right
 tray-padding = 2
@@ -571,7 +571,7 @@ label-empty-padding = 2
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 format-prefix = "%{F#6699ff}   %{F-}"
-format-underline = ${colors.secondary}
+format-underline = #4bffdc
 interval = 600
 
 click-left = $TERMINAL -e yay -Syu
