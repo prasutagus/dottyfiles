@@ -1,4 +1,4 @@
-#
+
 # wm independent hotkeys
 #
 
@@ -7,10 +7,11 @@ super + Return
 	alacritty
 
 # Web Browser
-super + alt + f
+super + alt + w
 	firefox
+
 # File Manager
-super + alt + t
+super + alt + f
       thunar
 
 # Emacs
@@ -19,7 +20,7 @@ super + alt + e
 
 # program launcher
 super + @space
-	dmenu_run -c -l 12
+	dmenu_run -c
 
 # make sxhkd reload its configuration files:
 super + Escape
