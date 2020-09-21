@@ -23,10 +23,12 @@ background-alt = #b31e1e1e
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
 foreground-alt = #555
-foreground-icon = #8c8c8c
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
+purple = #cc00ff
+aqua = #4bffdc
+orange = #ff9900
 
 [bar/mybar]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -154,7 +156,7 @@ blacklist-0 = num lock
 format-prefix = %{F#6699FF}   %{F-}
 format-prefix-foreground = ${colors.foreground-icon}
 label-layout = %layout%
-label-layout-underline = ${colors.secondary}
+label-layout-underline = ${colors.purple}
 
 label-indicator-padding = 2
 label-indicator-margin = 1
@@ -170,7 +172,7 @@ mount-0 = /
 label-mounted = %free%
 format-mounted-prefix = %{F#6699ff}   %{F-}
 ;label-mounted-foreground = ${colors.foreground-icon}
-label-mounted-underline = ${colors.primary}
+label-mounted-underline = ${colors.orange}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -274,7 +276,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 format-prefix = %{F#6699ff} %{F-}
-label-underline = #f90000
+label-underline = ${colors.purple}
 label = %percentage:2%%
 
 [module/memory]
@@ -282,7 +284,7 @@ type = internal/memory
 interval = 2
 format-prefix = %{F#6699FF}   %{F-}
 format-prefix-foreground = ${colors.foreground-icon}
-label-underline = #4bffdc
+label-underline = ${colors.aqua}
 label = %percentage_used%%
 
 [module/wlan]
@@ -291,7 +293,7 @@ interface = wlp46s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-label-connected-underline = #9f78e1
+label-connected-underline = ${colors.orange}
 label-connected = %essid% - %signal%
 
 format-disconnected =
@@ -335,7 +337,7 @@ time-alt = %H:%M:%S
 
 format-prefix = %{F#6699FF}  %{F-}
 ;format-prefix-foreground = ${colors.foreground-icon}
-label-underline = #0a6cf5
+label-underline = ${colors.aqua}
 
 label = %date% %time%
 
@@ -427,24 +429,28 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
+
+
 [module/temperature]
 type = internal/temperature
 thermal-zone = 0
+base-temperature = 20
 warn-temperature = 60
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format = <label>
+format-prefix = %{F#6699FF}  %{F-} 
+label-underline = ${colors.purple}
+;format-warn = <ramp> <label-warn>
+;format-warn-underline = ${self.format-underline}
 
 label = %temperature-c%
 ;format-prefix-foreground = ${colors.foreground-icon}
 label-warn = %temperature-c%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = %{F#6699FF}  %{F-} 
-;ramp-1 = 
-;ramp-2 = 
+;ramp-0 = %{F#6699FF}  %{F-} 
+;ramp-1 = B
+;ramp-2 = C
 ;ramp-foreground = ${colors.foreground-icon}
 
 [module/powermenu]
@@ -570,7 +576,7 @@ label-empty-padding = 2
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
 format-prefix = "%{F#6699ff}   %{F-}"
-format-underline = #4bffdc
+format-underline = ${colors.aqua}
 interval = 600
 
 click-left = $TERMINAL -e yay -Syu
