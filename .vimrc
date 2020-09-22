@@ -19,6 +19,7 @@ set splitbelow splitright
 autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
+set t_Co=16
 
 " if (has("termguicolors"))
 " 	set termguicolors
