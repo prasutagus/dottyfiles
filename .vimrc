@@ -1,6 +1,6 @@
 " Get the defaults as if no .vimrc file
-" unlet! skip_defaults_vim
-" source $VIMRUNTIME/defaults.vim
+unlet! skip_defaults_vim
+source $VIMRUNTIME/defaults.vim
 
 " Settings
 syntax on
@@ -15,6 +15,7 @@ set incsearch
 set backspace=indent,eol,start
 set autoindent
 set splitbelow splitright
+set showbreak=...
 
 autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
