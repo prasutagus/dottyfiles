@@ -273,14 +273,14 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = %{F#6699ff} %{F-}
+format-prefix = %{F#6699ff}%{F-}
 label-underline = ${colors.purple}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = %{F#6699FF}   %{F-}
+format-prefix = %{F#6699FF}  %{F-}
 label-underline = ${colors.aqua}
 label = %percentage_used%%
 
