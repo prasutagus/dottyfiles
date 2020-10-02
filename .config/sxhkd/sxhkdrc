@@ -18,6 +18,14 @@ super + alt + f
 super + alt + e
       emacs
 
+# Shorwave
+super + alt + s
+	shortwave
+
+# Mail Client
+super + alt + m
+	thunderbird
+
 # program launcher
 super + @space
 	dmenu_run -c

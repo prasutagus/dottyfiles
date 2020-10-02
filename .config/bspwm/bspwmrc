@@ -7,7 +7,7 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 $HOME/.config/polybar/launch.sh
 # feh --randomize --bg-fill ~/Pictures/backgrounds/dark_pics &
 nitrogen --restore &
-picom &
+picom -f &
 setxkbmap -layout gb &
 dunst &
 killall "nm-applet"
@@ -40,5 +40,6 @@ bspc config presel_feedback_color "#bfbfbf"
 # bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 bspc rule -a Emacs state=tiled
-bspc rule -a Shortwave desktop='^5'
-bspc rule -a Thunar desktop='^3'
+bspc rule -a Shortwave desktop=^5 follow=on
+bspc rule -a Thunar desktop=^3 follow=on
+bspc rule -a Thunderbird desktop=^10 follow=on state=floating rectangle=1200x1200+20+50
