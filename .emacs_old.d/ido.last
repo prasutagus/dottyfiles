@@ -1,0 +1,129 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/david/Development/old_webdev/Django/blog_2020/static/" . "css/")
+ ("/home/david/Programming/old_programming/" . "python/")
+ ("/home/david/Programming/" . "old_programming/")
+ ("/home/david/Development/old_webdev/django/blogsite2019/static/" . "images/")
+ ("/home/david/Development/old_webdev/django/blogsite2019/" . "static/")
+ ("/home/david/Development/old_webdev/django/" . "blogsite2019/")
+ ("/home/david/Development/old_webdev/Django/blog_2020/" . "static/")
+ ("/home/david/Development/old_webdev/Django/" . "blog_2020/")
+ ("/home/david/Development/old_webdev/" . "Django/")
+ ("/home/david/.config/polybar/" . "scripts/")
+ ("/home/david/Development/django/project-jun20/blog/" . "static/")
+ ("/home/david/.config/" . "polybar/")
+ ("/home/david/Development/django/project-jun20/" . "blog/")
+ ("/home/david/Development/django/" . "project-jun20/")
+ ("/home/david/Development/" . "old_webdev/")
+ ("/home/david/python_work/" . "ch1-3/")
+ ("/home/david/" . ".emacs.d/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/david/.emacs.d/"
+ "/home/david/"
+ "/home/david/Documents/"
+ "/home/david/Development/old_webdev/Django/blog_2020/static/"
+ "/home/david/Development/old_webdev/Django/blog_2020/static/css/"
+ "/home/david/.config/polybar/"
+ "/home/david/Programming/old_programming/python/"
+ "/home/david/.config/qtile/"
+ "/home/david/Development/old_webdev/django/blogsite2019/static/images/"
+ "/home/david/Development/django/"
+ "/home/david/.config/polybar/scripts/"
+ "/home/david/Development/django/project-jun20/blog/templates/"
+ "/home/david/.config/bspwm/"
+ "/home/david/.config/sxhkd/"
+ "/home/david/org/"
+ "/home/david/python_work/ch1-3/"
+ "/home/david/Development/django/project-jun20/blog/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "config.org"
+ "test.org"
+ "my_agenda.org"
+ "config_emacs.org"
+ "config"
+ "text_strings2.py"
+ "test2.py"
+ "reverseCipher.py"
+ "kernel.py"
+ "kernel.sh"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/david/.emacs.d/" (24431 18183 404694 155000) "../" "ido.last~" "init.el" "recentf" "elpa/" "backups/" "ido.last" "snippets/" "auto-save-list/" "config.org" "config.org~" "config.el" "recentf~" "init_bak.el" "init.el~" "#config.org#" "url/" "ac-comphist.dat" "elpy/" "#init.el#" "places" "./")
+
+ ("/home/david/" (24431 18065 481359 975000) ".profile" "Documents/" ".local/" ".zshrc" "updates-arch.sh" "../" ".python_history" ".lesshsQ" ".histfile" ".lesshst" ".cache/" ".viminfo.tmp" ".xsession-errors.old" ".bash_profile" "#test.org#" ".zsh_profile" "config_emacs.org" "tint2-executors/" "Music/" ".gtkrc-2.0" ".gitconfig" ".bashrc" ".zsh_history" ".config/" ".fonts/" ".emacs.d/" ".bash_logout" ".rustup/" ".zshrc.pre-oh-my-zsh" ".bash_history" ".shell.pre-oh-my-zsh" "python_work/" "xmenu/" "st-0.8.4/" ".Xauthority" ".cfg/" ".viminfo" ".zcompdump" "st-0.8.4.tar.gz" "Development/" ".thunderbird/" ".gitignore" "Programming/" "Public/" "yay/" ".xsession-errors" ".vimrc" ".icons/" ".zcompdump-davidArch-5.8" "xmenu.sh" ".Xresources" "dmenu-5.0/" "Downloads/" ".mozilla/" "./" "Desktop/" ".gnupg/" ".oh-my-zsh/" "Scripts/" "Pictures/" "Videos/" "tint2-theme-collections/" ".viminfz.tmp" "Templates/" ".dmrc" ".vim/" ".fehbg")
+
+ ("/home/david/Documents/" (24431 18243 14694 576000) "learn_linux.txt" "../" "mount_ext_hdd.doc" "Records/" "MuseScore3/" "django_passwords" "to_secure.txt" "reflector.txt" "scanned_docs/" "org/" "my_agenda.org~" "mycheque.pdf" "#my_agenda.org#" "arch-install-iwlwifi-problem.txt~" "latext_tut/" "spreadsheets/" "feh.txt" "Write/" "Calc/" "scratch/" "kak01.txt" "package-list.txt" "Medical David/" "eRecords2007/" "endeavouros.txt" "words/" "bspwm.desktop" "latex/" "django_passwords.txt" "bookmarks.html" "Terminal_Fonts.txt" "best-wallpaper.txt" "./" "backup-uuid.txt~" "my_agenda.org")
+
+ ("/home/david/python_work/ch1-3/" (24392 63702 983207 785000) "../" "fav_cars.py" "name_cases02.py" "bicycles.py" "strings01.py" "task1.py" "name_cases01.py" "motorcycles.py" "strippers.py" "quotes01.py" "friends.py" "hello_world.py" "./" "motorbikes.py")
+
+ ("/home/david/.config/sxhkd/" (24427 13651 944240 759000) "../" "sxhkdrc~" "#sxhkdrc#" "sxhkdrc" "./")
+
+ ("/home/david/.config/bspwm/" (24430 2112 109516 261000) "../" "bspwmrc~" "./" "bspwmrc")
+
+ ("/home/david/Development/django/" (24386 45278 450305 551000) "beta-20200623.pdf" "beta-20200821.pdf" "../" "project-jun20/" "beta-20200530.pdf" "django.pdf" "beta-20200713.pdf" "./" "beta-20200729.pdf")
+
+ ("/home/david/Programming/old_programming/python/" (24340 35962 216905 434000) "test3_while.py" "../" "reverseCipher.py" "converter.py" "test2.py" "commenting.py" "test_strings.py" "#text_strings2.py#" "text_strings2.py" "#test3_while.py#" "test1.py" "./")
+
+ ("/home/david/.config/polybar/" (24425 54813 900182 209000) "../" "arch-updates/" "config" "launch.sh" "launch_openbox.sh" "scripts/" "config_old" "emblem-package.svg" "config_prev" "./")
+
+ ("/home/david/Development/old_webdev/Django/blog_2020/static/css/" (24264 6066 418077 918000) "../" "blog.css" "./" "blog.css~")
+
+ ("/home/david/Development/old_webdev/Django/blog_2020/blog/" (24264 6066 414744 585000) "forms.py" "../" "admin.py" "urls.py" "migrations/" "tests.py" "models.py~" "urls.py~" "forms.py~" "__pycache__/" "views.py" "apps.py" "__init__.py" "views.py~" "./" "models.py")
+
+ ("/home/david/Development/old_webdev/Django/blog_2020/blog2020/" (24264 6066 418077 918000) "../" "settings.py~" "asgi.py" "urls.py" "wsgi.py" "settings.py" "__pycache__/" "__init__.py" "./")
+
+ ("/home/david/.config/" (24340 36657 698495 513000) "autostart/" "picom/" "conky-manager.json" "../" "xarchiver/" "neofetch/" "dconf/" "user-dirs.locale" "alacritty/" "abiword/" "rofi/" "sxhkd/" "plank/" "Mousepad/" "ranger/" "procps/" "gtk-2.0/" "tint2/" "qtile/" "gtk-3.0/" "pulse/" "xfce4/" "mimeapps.list" "calcurse/" "Shortwave/" "i3/" "nvim/" "Thunar/" "termite/" "obmenu-generator/" "user-dirs.dirs" "yay/" "openbox/" "dunst/" "volumeicon/" "./" "pavucontrol.ini" "polybar/" "bspwm/")
+
+ ("/home/david/Programming/old_programming/" (24264 6244 671412 500000) "../" "javascript/" "python/" "./")
+
+ ("/home/david/Programming/automate_tbs_python/" (24289 18930 773665 436000) "../" "prog1.py" "./")
+
+ ("/home/david/Programming/" (24307 13919 588896 859000) "learn_C_programming/" "../" "old_programming/" "javascript/" "c_prog_lang/" "pi_c/" "Essentials_Bash_v2.pdf" "emacs_org_tutorial/" "the_K&R_C/" "go.pdf" "emacs_ref.pdf" "python_projects/" "automate_tbs_python/" "./" "C_GUI_Programming.pdf~" "C_GUI/" "sedawk/")
+
+ ("/home/david/.config/qtile/" (24340 549 438979 477000) "../" "autostart.sh" "config.py" "autostart.sh~" "kernel.py~" "kernel.sh~" "config.py~" "__pycache__/" "icons/" "kernel.sh" "./" "kernel.py")
+
+ ("/home/david/Development/django/project-jun20/blog/templates/" (24327 35751 39912 54000) "article_detail.html" "../" "includes/" "article_delete.html" "base.html" "article_update.html" "article_create.html" "article_list.html" "./")
+
+ ("/home/david/Development/old_webdev/django/blogsite2019/static/images/" (24264 6098 384744 815000) "../" "gnat.jpg" "snow-hills.jpg" "ShackletonMk2.jpg" "Gnat_Ready.jpg" "./" "lightning-F6.jpg")
+
+ ("/home/david/Development/old_webdev/django/blogsite2019/static/" (24264 6098 378078 148000) "../" "css/" "images/" "./")
+
+ ("/home/david/Development/old_webdev/django/blogsite2019/" (24264 6098 514744 814000) "Pipfile.lock" "../" "users/" "static/" "Pipfile" ".DS_Store" "Pipfile.lock~" "Pipfile~" "mysite/" "articles/" "manage.py" "./" "templates/" "pages/")
+
+ ("/home/david/Development/old_webdev/django/" (24264 6098 688078 148000) "../" "base_cbv_project/" "djangox/" "blogsite2018/" "blogsite2019/" "try-django/" "./" "adv-project-template/" "march_project/")
+
+ ("/home/david/Development/old_webdev/Django/blog_2020/static/" (24264 6066 418077 918000) "../" "css/" "./")
+
+ ("/home/david/Development/old_webdev/Django/blog_2020/" (24282 37610 653699 230000) "venv/" "../" "db.sqlite3" "password.txt" ".git/" "static/" "manage.py" ".gitignore" "blog2020/" "./" "templates/" "blog/")
+
+ ("/home/david/Development/old_webdev/Django/" (24282 37588 420366 407000) "blog_paginate.txt" "../" "cbv_project_stage4/" "my_django/" "beta-20200523.pdf" "djangogirls-tutorial-en.pdf" "hellodjango/" "beta-20200319.pdf" "django_info.txt" "beta-20200325.pdf" "beta-20200310.pdf" "beta-20200313.pdf" "django20_project/" "everycheese/" "django_crash_betas/" "blog_2020/" "./" "hellodj/")
+
+ ("/home/david/Development/old_webdev/" (24283 28738 672178 999000) "../" "Django/" "dev/" "djangoforbeginners-export.pdf" "django/" "./")
+
+ ("/home/david/Development/django/project-jun20/blog/static/" (24286 6471 144891 47000) "../" "css/" "./")
+
+ ("/home/david/Development/django/project-jun20/blog/" (24329 35641 175844 857000) "../" "admin.py" "urls.py" "migrations/" "static/" "tests.py" "#admin.py#" "views.py" "apps.py" "__init__.py" "./" "templates/" "models.py")
+
+ ("/home/david/.config/polybar/scripts/" (24302 33876 517650 218000) "updates-arch.sh" "../" "updates-arch-combined.sh" "pulseaudio-control.bash" "hdd.sh" "check-all-updates.sh" "pavolume.sh" "./")
+
+ ("/home/david/Development/django/project-jun20/" (24327 6498 721793 294000) "Pipfile.lock" "../" "db.sqlite3" ".git/" "Pipfile" "manage.py" "./" "covidproject/" "blog/")
+
+ ("/home/david/org/" (24319 18419 947742 263000) "../" "tasks.org" "tasks.org~" "./")
+
+ ("/home/david/Development/" (24289 56092 780443 946000) "../" "old_webdev/" "font-awesome.txt" "beta-20200523.pdf" "php/" "Hugo/" "django/" "Flask/" "./")
+
+ ("/home/david/python_work/" (24310 2980 496657 258000) "../" "ch1-3/" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

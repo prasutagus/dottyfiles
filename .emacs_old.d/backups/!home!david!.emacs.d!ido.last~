@@ -1,0 +1,50 @@
+;;; -*- coding: utf-8 -*-
+
+;; ----- ido-last-directory-list -----
+(
+ ("/home/david/Development/django/project-jun20/" . "blog/")
+ ("/home/david/Development/django/" . "project-jun20/")
+ ("/home/david/Development/" . "django/")
+ ("/home/david/python_work/" . "ch1-3/")
+ ("/home/david/" . "python_work/")
+)
+
+;; ----- ido-work-directory-list -----
+(
+ "/home/david/"
+ "/home/david/python_work/ch1-3/"
+ "/home/david/.emacs.d/"
+ "/home/david/Development/django/project-jun20/blog/"
+)
+
+;; ----- ido-work-file-list -----
+(
+ "config_emacs.org"
+ "motorcycles.py"
+ "init.el"
+ "config.org"
+ "bicycles.py"
+ "views.py"
+)
+
+;; ----- ido-dir-file-cache -----
+(
+ ("/home/david/" (24313 59590 30151 768000) "Documents/" ".local/" ".zshrc" "updates-arch.sh" "../" ".python_history" ".histfile" "dotfiles/" ".cache/" "djangoforbeginners-export.pdf" ".xsession-errors.old" ".bash_profile" "config_emacs.org" "myArchiso/" "tint2-executors/" "Music/" "arch.txt" ".gtkrc-2.0" ".gitconfig" "test.txt" "cnijfilter2/" ".bashrc" ".zsh_history" ".config/" ".fonts/" ".emacs.d/" ".bash_logout" ".zshrc.pre-oh-my-zsh" ".bash_history" ".shell.pre-oh-my-zsh" "python_work/" ".Xauthority" ".viminfo" ".zcompdump" "Development/" ".thunderbird/" "Programming/" "Public/" "yay/" ".xsession-errors" ".vimrc" ".icons/" ".zcompdump-davidArch-5.8" ".Xresources" "Downloads/" ".mozilla/" "build/" "./" "Desktop/" "qtile_keys.txt" ".oh-my-zsh/" "Scripts/" "rubbish.txt" "temp/" "Pictures/" "Videos/" "tint2-theme-collections/" "Templates/" ".dmrc" ".vim/" ".fehbg")
+
+ ("/home/david/.emacs.d/" (24313 58482 760150 681000) "../" "ido.last~" "init.el" "elpa/" "backups/" "ido.last" "snippets/" "auto-save-list/" "config.org" "init.el~" "url/" "ac-comphist.dat" "elpy/" "#init.el#" "places" "./")
+
+ ("/home/david/python_work/ch1-3/" (24313 41135 215035 710000) "../" "bicycles.py~" "fav_cars.py" "name_cases02.py" "bicycles.py" "strings01.py" "task1.py" "name_cases01.py" "motorcycles.py" "motorcycles.py~" "friends.py" "hello_world.py" "./")
+
+ ("/home/david/Development/django/project-jun20/blog/" (24310 26329 811194 820000) "../" "admin.py" "urls.py" "migrations/" "static/" "tests.py" "views.py" "apps.py" "__init__.py" "./" "templates/" "models.py")
+
+ ("/home/david/Development/django/project-jun20/" (24307 14099 508899 321000) "Pipfile.lock" "../" "db.sqlite3" ".git/" "Pipfile" "manage.py" "./" "covidproject/" "blog/")
+
+ ("/home/david/Development/django/" (24307 49966 318348 17000) "beta-20200623.pdf" "../" "project-jun20/" "beta-20200530.pdf" "django.pdf" "./")
+
+ ("/home/david/Development/" (24289 56092 780443 946000) "../" "old_webdev/" "font-awesome.txt" "beta-20200523.pdf" "php/" "Hugo/" "django/" "Flask/" "./")
+
+ ("/home/david/python_work/" (24310 2980 496657 258000) "../" "ch1-3/" "./")
+)
+
+;; ----- ido-unc-hosts-cache -----
+t

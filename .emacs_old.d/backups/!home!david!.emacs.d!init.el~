@@ -1,0 +1,82 @@
+
+(require 'package)
+(setq package-enable-at-startup nil)
+(add-to-list 'package-archives
+	     '("melpa" . "https://melpa.org/packages/"))
+
+(package-initialize)
+
+;; For use-package
+(unless (package-installed-p 'use-package)
+  (package-refresh-contents)
+  (package-install 'use-package))
+
+;; For which-key
+:(use-package which-key
+  :ensure t
+  :init
+  (which-key-mode))
+
+
+(setq inhibit-startup-message t)
+(setq make-backup-file nil)
+(setq auto-save-default nil)
+
+(require 'autopair)
+(autopair-global-mode) ;; to enable in all buffers
+
+(setq ido-enable-flex-matching nil)
+(setq ido-create-new-buffer 'always)
+(setq ido-everywhere t)
+(ido-mode 1)
+
+;; For Python
+(use-package elpy
+  :ensure t
+  :init
+  (elpy-enable ))
+
+;; For Auto-completion
+(use-package auto-complete
+  :ensure t
+  :init
+  (progn
+    (ac-config-default)
+    (global-auto-complete-mode t)
+    ))
+
+(require 'better-defaults)
+
+(global-linum-mode t)
+(setq linum-format "%4d ")
+
+(use-package smartparens
+  :ensure t
+  :config
+  (require 'smartparens-config)
+  (smartparens-global-mode t)
+  (setq sp-highlight-pair-overlay nil)
+  (setq sp-show-pair-from-inside nil)
+  :diminish smartparens-mode)
+
+(use-package flycheck
+  :ensure t
+  :hook
+  (prog-mode . flycheck-mode)
+  (text-mode . flycheck-mode))
+
+
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(package-selected-packages
+   (quote
+    (flycheck smartparens better-defaults auto-complete elpy which-key use-package railscasts-reloaded-theme dracula-theme autopair))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(font-lock-comment-face ((t (:foreground "chocolate1" :slant italic)))))

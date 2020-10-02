@@ -1,0 +1,10 @@
+;;; -*- coding: utf-8 -*-
+(("/home/david/.emacs.d/init.el" . 21)
+ ("/home/david/python_work/ch1-3/motorcycles.py" . 534)
+ ("/home/david/config_emacs.org" . 657)
+ ("/home/david/.emacs.d/elpa/flycheck-20200610.1809/flycheck-autoloads.el" . 11085)
+ ("/home/david/.emacs.d/elpa/pkg-info-20150517.1143/pkg-info-autoloads.el" . 3882)
+ ("/home/david/.emacs.d/elpa/epl-20180205.2049/epl-autoloads.el" . 380)
+ ("/home/david/.emacs.d/elpa/smartparens-20200324.2147/smartparens-autoloads.el" . 10653)
+ ("/home/david/.emacs.d/elpa/dash-20200524.1947/dash-autoloads.el" . 620)
+ ("/home/david/.emacs.d/config.org" . 60))
