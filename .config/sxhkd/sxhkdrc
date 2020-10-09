@@ -18,7 +18,7 @@ super + alt + f
 super + alt + e
       emacs
 
-# Shorwave
+# Shortwave
 super + alt + s
 	shortwave
 
@@ -27,12 +27,12 @@ super + alt + m
 	thunderbird
 
 # program launcher
-super + @space
+super + p
 	dmenu_run -c
 
 # make sxhkd reload its configuration files:
 super + Escape
-	pkill -USR1 -x sxhkd
+	pkill -USR1 -x sxhkd; notify-send 'sxhkd' 'Reloaded config'
 
 # using xmenu
 super + ctrl + Return
@@ -109,7 +109,7 @@ super + {_,shift + }{1-9,0}
 	bspc {desktop -f,node -d} '^{1-9,10}'
 
 
-# swap active desktop for desktop {1-9}
+# Send to and swap active desktop for desktop {1-9}
 super + {_,ctrl + }{1-9,0}
 	bspc {desktop -s,node -d} '^{1-9,10}' --follow
 
