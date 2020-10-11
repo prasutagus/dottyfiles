@@ -16,8 +16,8 @@
 #
 # xfce-mcs-manager &
 
-# tint2 &
-$HOME/.config/polybar/launch_openbox.sh
+tint2 &
+# $HOME/.config/polybar/launch_openbox.sh
 # polybar mybar &
 picom  -f &
 (sleep 3s && plank) &
