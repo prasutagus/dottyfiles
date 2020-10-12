@@ -29,8 +29,9 @@ purple = #9f78e1
 aqua = #4bffdc
 blue = #4d94ff
 red = #ff3300
-orange = #ff9900
+orange =#ffcc00
 green = #66ff66
+sea-grey = #527a7a
 
 [bar/mybspwmbar]
 width = 100%
@@ -52,7 +53,7 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
+font-0 = fixed:pixelsize=11;1
 font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
 font-2 = siji:pixelsize=10;1
 font-3 = Font Awesome 5 Free Solid:pixelsize=10;2
@@ -78,12 +79,14 @@ separator = |
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
+label-font = 1
 
 [module/xkeyboard]
 type = internal/xkeyboard
 blacklist-0 = num lock
 
-format-prefix = "   "
+format-prefix =  
+format-prefix-padding = 2
 format-prefix-foreground = ${colors.orange}
 
 label-layout = %layout%
@@ -100,7 +103,8 @@ interval = 25
 mount-0 = /
 
 label-mounted = %free%
-format-mounted-prefix = "  " 
+format-mounted-prefix = 
+format-mounted-prefix-padding = 2
 format-mounted-prefix-foreground = ${colors.purple}
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -112,11 +116,12 @@ label-focused = %index%
 label-focused-background = ${colors.background-alt}
 label-focused-foreground = ${colors.orange}
 label-focused-padding = 2
-label-focused-overline = ${colors.purple}
+label-focused-overline = ${colors.green}
 
 label-occupied = %index%
 label-occupied-foreground = ${colors.blue}
 label-occupied-padding = 2
+label-occupied-overline = ${colors.sea-grey}
 
 label-urgent = %index%!
 label-urgent-background = ${colors.alert}
@@ -133,14 +138,16 @@ label-empty-padding = 2
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = "   "
+format-prefix = 
+format-prefix-padding = 2
 format-prefix-foreground = ${colors.purple}
 label = %percentage:2%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = "  "
+format-prefix = 
+format-prefix-padding = 2
 format-prefix-foreground = ${colors.red}
 label = %percentage_used%% used
 
@@ -151,7 +158,8 @@ interface = enp51s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+format-connected-prefix = 
+format-connected-prefix-padding = 2
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -171,7 +179,8 @@ date-alt = " %a, %d %b %Y"
 time = %H:%M
 time-alt = %H:%M %Z
 
-format-prefix = "  "
+format-prefix = 
+format-prefix-padding = 2
 format-prefix-foreground = ${colors.aqua}
 
 label = %date% %time%
@@ -179,12 +188,13 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
-label-volume-prefix = 
-label-volume = %{F#4d94ff}  %{F-} %percentage%%
-label-volume-foreground = ${root.foreground}
+format-volume-prefix = 
+format-volume-prefix-foreground = ${colors.blue}
+format-volume-prefix-padding = 2
+label-volume = %percentage%%
 
-label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted =  muted
+label-muted-foreground = ${colors.foreground-alt}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = #55aa55
@@ -239,7 +249,8 @@ base-temperature = 20
 warn-temperature = 60
 
 format = <label>
-format-prefix = "  " 
+format-prefix =  
+format-prefix-padding = 2
 format-prefix-foreground = ${colors.orange}
 ; format-warn = <ramp> <label-warn>
 
@@ -257,10 +268,12 @@ label-warn-foreground = ${colors.secondary}
 type = custom/menu
 expand-right = true
 
-format-spacing = 4
-label-open = "  "
+; format-spacing = 4
+label-open = 
+label-open-padding = 2
 label-open-foreground = ${colors.secondary}
 label-close =  
+label-close-padding = 2
 label-active-font = 2
 
 menu-0-0 = "reboot "
@@ -271,8 +284,9 @@ menu-0-1-exec = poweroff
 [module/update-arch]
 type = custom/script
 exec = ~/.config/polybar/scripts/updates-arch-combined.sh
-format-prefix = "   " 
+format-prefix = 
 format-prefix-foreground = ${colors.green}
+format-prefix-padding = 2
 interval = 600
 
 click-left = $TERMINAL -e yay -Syu
@@ -281,7 +295,8 @@ click-left = $TERMINAL -e yay -Syu
 type = internal/network
 interface = wlp46s0
 interval = 3.0
-format-connected-prefix = %{A1:nm-connection-editor:}   %{A}
+format-connected-prefix = %{A1:nm-connection-editor:} %{A}
+format-connected-prefix-padding = 2
 format-connected-prefix-foreground = ${colors.blue}
 format-connected = <label-connected>
 format-disconnected = <label-disconnected>
