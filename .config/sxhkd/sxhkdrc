@@ -7,19 +7,19 @@ super + Return
 	st
 
 # Web Browser
-super + alt + w
+super + shift + w
 	firefox
 
 # File Manager
-super + alt + f
+super + shift + f
       thunar
 
 # Emacs
-super + alt + e
+super + shift + e
       emacs
 
 # Shortwave
-super + alt + s
+super + shift + s
 	shortwave
 
 # Mail Client

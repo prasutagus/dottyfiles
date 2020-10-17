@@ -3,10 +3,12 @@ unlet! skip_defaults_vim
 source $VIMRUNTIME/defaults.vim
 
 " Settings
+filetype plugin on
 syntax on
 set laststatus=2
 set cmdheight=2
 set title
+set wildmenu
 set wildmode=list:longest,full
 set number
 set nobackup
@@ -65,6 +67,7 @@ packadd minpac
 call minpac#init()
 call minpac#add('k-takata/minpac', {'type': 'opt'})
 
+call minpac#add('tpope/vim-sensible')
 call minpac#add('sirver/ultisnips')
 call minpac#add('tpope/vim-unimpaired')
 call minpac#add('honza/vim-snippets')
@@ -82,4 +85,5 @@ call minpac#add('carakan/new-railscasts-theme')
 command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
 command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
 command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+
 
