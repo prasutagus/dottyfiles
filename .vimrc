@@ -1,6 +1,6 @@
 " Get the defaults as if no .vimrc file
 unlet! skip_defaults_vim
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 
 " Settings
 filetype plugin on
@@ -32,7 +32,7 @@ colorscheme new-railscasts
 highlight Comment cterm=italic
 let mapleader=" " 
 inoremap jk <esc>
-nnoremap <leader>py :!python3 %<cr>
+nnoremap <leader>py :!python %<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>bb :buffers<CR>:buffer<space>
