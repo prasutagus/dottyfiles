@@ -6,21 +6,6 @@
 super + Return
 	st
 
-# Web Browser
-super + shift + w
-	firefox
-
-# File Manager
-super + shift + f
-      thunar
-
-# Emacs
-super + shift + e
-      emacs
-
-# Shortwave
-super + shift + s
-	shortwave
 
 # Mail Client
 super + alt + m
@@ -29,6 +14,10 @@ super + alt + m
 # program launcher
 super + p
 	dmenu_run -c
+
+# programs
+alt + {b,f,r,e,m}
+	{firefox,thunar,shortwave,emacs,thunderbird}
 
 # make sxhkd reload its configuration files:
 super + Escape
