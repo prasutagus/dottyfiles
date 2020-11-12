@@ -12,6 +12,7 @@ updates=$(("$updates_arch" + "$updates_aur"))
 
 if [ "$updates" -gt 0 ]; then
 	echo "($updates)"
+	notify-send "Pending updates:" "<i>$updates</i>" --icon="archlinux" --expire-time=5000
 else
     echo "0"
 fi

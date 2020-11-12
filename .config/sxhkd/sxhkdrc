@@ -6,11 +6,6 @@
 super + Return
 	st
 
-
-# Mail Client
-super + alt + m
-	thunderbird
-
 # program launcher
 super + p
 	dmenu_run -c

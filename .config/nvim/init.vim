@@ -9,6 +9,7 @@ Plug 'tpope/vim-commentary'
 Plug 'jiangmiao/auto-pairs'
 Plug 'carakan/new-railscasts-theme'
 Plug 'dracula/vim', { 'as': 'dracula' }
+Plug 'tomasiser/vim-code-dark'
 
 call plug#end()
 
@@ -20,8 +21,7 @@ syntax enable
 set laststatus=2
 set cmdheight=2
 set title
-set wildmenu
-set wildmode=list:longest,full
+set wildmode=longest,list,full
 set number
 set nobackup
 set noswapfile
@@ -32,16 +32,20 @@ set autoindent
 set splitbelow splitright
 set showbreak=...
 
-" True Color Support if it's avaiable in terminal
+let g:python3_host_prog = '/usr/bin/python3'
+
+" True Color Support if it's available in terminal
 if has("termguicolors")
 set termguicolors
 endif
 
-colorscheme dracula
+" colorscheme dracula
+colorscheme codedark
 
 autocmd FileType * set tabstop=2|set shiftwidth=2|set noexpandtab
 autocmd FileType python set tabstop=4|set shiftwidth=4|set expandtab
 
+set cursorline
 highlight Comment cterm=italic gui=italic
 
 " highlight Normal guibg=none
@@ -53,6 +57,7 @@ nnoremap <leader>py :term python %<cr>
 nnoremap <leader>ev :e $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
 nnoremap <leader>bb :buffers<CR>:buffer<space>
+map <leader>s :setlocal spell! spelllang=en_gb<CR>
 
 let g:netrw_banner = 0
 let g:netrw_liststyle = 3
@@ -63,6 +68,8 @@ let g:netrw_winsize = 20
 map <F6> :Lexplore<CR>
 
 let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.local/share/UltiSnips'] 
+" let g:UltiSnipsSnippetDirectories=['UltiSnips', $HOME.'/.config/nvim/plugged/UltiSnips'] 
+
 
 let g:lightline = {
     \ 'colorscheme': 'darcula',

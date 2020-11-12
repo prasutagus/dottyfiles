@@ -10,10 +10,10 @@ nitrogen --restore &
 picom -f &
 setxkbmap -layout gb &
 dunst &
-killall "nm-applet"
-nm-applet &
-killall "volumeicon"
-volumeicon &
+# killall "nm-applet"
+# nm-applet &
+# killall "volumeicon"
+# volumeicon &
 thunar --daemon &
 
 bspc monitor -d I II III IV V VI VII VIII IX
